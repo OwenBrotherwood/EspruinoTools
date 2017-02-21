@@ -11,7 +11,11 @@
   try {
     noble = require('noble');
   } catch (e) {
-    console.log("'noble' module couldn't be loaded, no node.js Bluetooth Low Energy\n", e);
+    if (e.message === "LIBUSB_ERROR_NOT_SUPPORTED"){
+      console.log("No libusb - nobel disabled");
+    }else{
+      console.log("'noble' module couldn't be loaded, no node.js Bluetooth Low Energy\n", e);
+    }
     // super nasty workaround for https://github.com/sandeepmistry/noble/issues/502
     process.removeAllListeners('exit');
     return;
