@@ -17,7 +17,7 @@
       console.log("'noble' module couldn't be loaded, no node.js Bluetooth Low Energy\n", e);
     }
     // super nasty workaround for https://github.com/sandeepmistry/noble/issues/502
-    process.removeAllListeners('exit');
+    // process.removeAllListeners('exit');
     return;
   }
 
