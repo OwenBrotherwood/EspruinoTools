@@ -12,7 +12,7 @@
     noble = require('noble');
   } catch (e) {
     if (e.message === "LIBUSB_ERROR_NOT_SUPPORTED"){
-      console.log("No libusb - nobel disabled");
+      console.log("No libusb - noble disabled");
     }else{
       console.log("'noble' module couldn't be loaded, no node.js Bluetooth Low Energy\n", e);
     }
